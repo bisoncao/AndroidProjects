@@ -12,6 +12,7 @@ import android.widget.Button;
 import android.widget.TextView;
 
 import nom.bisoncao.bcviewfinder.R;
+import nom.bisoncao.bcviewfinder.utils.ViewFinder;
 import nom.bisoncao.bcviewfinder.utils.ViewFinderBind;
 
 public class MainActivity extends AppCompatActivity {
@@ -24,16 +25,22 @@ public class MainActivity extends AppCompatActivity {
     public TextView tvThird;
     @ViewFinderBind(R.id.btn_swap)
     public Button btnSwap;
+    @ViewFinderBind(R.id.fab)
+    public FloatingActionButton fab;
+    private CharSequence[] texts = new CharSequence[3];
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        ViewFinder
+        ViewFinder.bind(this, this.getWindow().getDecorView());
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
+        texts[0] = tvFirst.getText();
+        texts[1] = tvSecond.getText();
+        texts[2] = tvThird.getText();
+
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -41,6 +48,19 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        btnSwap.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                CharSequence temp = texts[0];
+                texts[0] = texts[2];
+                texts[2] = texts[1];
+                texts[1] = temp;
+
+                tvFirst.setText(texts[0]);
+                tvSecond.setText(texts[1]);
+                tvThird.setText(texts[2]);
+            }
+        });
 
     }
 

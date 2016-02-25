@@ -2,9 +2,6 @@ package nom.bisoncao.bcviewfinder.utils;
 
 import android.view.View;
 
-import com.tataufo.tatalib.utils.NullUtil;
-import com.tataufo.tatalib.utils.TataDebug;
-
 import java.lang.reflect.Field;
 
 /**
@@ -37,6 +34,12 @@ public class ViewFinder {
         }
     }
 
+    /**
+     * For example: you can use "ViewFinder.bind(this, this.getWindow().getDecorView())"
+     * in OnCreate method after setContentView()
+     * @param thisObject
+     * @param parent
+     */
     public static void bind(Object thisObject, View parent) {
         bind(thisObject, ViewFinderBind.DEFAULT_CATEGORY, parent);
     }
