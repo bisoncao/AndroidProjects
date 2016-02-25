@@ -1,7 +1,5 @@
 package nom.bisoncao.bcviewfinder.utils;
 
-import com.tataufo.tatalib.TUConst;
-
 import java.util.List;
 
 public class TataDebug extends TataDebugParent {
