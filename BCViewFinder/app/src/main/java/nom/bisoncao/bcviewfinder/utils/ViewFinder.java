@@ -21,7 +21,7 @@ public class ViewFinder {
         try {
             Class myClass = Class.forName(thisObject.getClass().getName());
             if (myClass != null) {
-                Field[] fields = myClass.getFields();
+                Field[] fields = myClass.getDeclaredFields();
                 if (NullUtil.isNotNullArr(fields)) {
                     for (Field field : fields) {
                         bindView(thisObject, category, parent, field);
@@ -62,6 +62,7 @@ public class ViewFinder {
         if (category == null) {
             category = ViewFinderBind.DEFAULT_CATEGORY;
         }
+        field.setAccessible(true);
         if (field.isAnnotationPresent(ViewFinderBind.class)) {
             ViewFinderBind bind = field.getAnnotation(ViewFinderBind.class);
             if (category.equals(bind.category())) {

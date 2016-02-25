@@ -18,15 +18,15 @@ import nom.bisoncao.bcviewfinder.utils.ViewFinderBind;
 public class MainActivity extends AppCompatActivity {
 
     @ViewFinderBind(R.id.tv_first)
-    public TextView tvFirst;
+    private TextView tvFirst;
     @ViewFinderBind(R.id.tv_second)
-    public TextView tvSecond;
+    private TextView tvSecond;
     @ViewFinderBind(R.id.tv_third)
-    public TextView tvThird;
+    private TextView tvThird;
     @ViewFinderBind(R.id.btn_swap)
-    public Button btnSwap;
+    private Button btnSwap;
     @ViewFinderBind(R.id.fab)
-    public FloatingActionButton fab;
+    private FloatingActionButton fab;
     private CharSequence[] texts = new CharSequence[3];
 
     @Override
