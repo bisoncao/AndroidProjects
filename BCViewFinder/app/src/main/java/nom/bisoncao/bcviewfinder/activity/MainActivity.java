@@ -11,8 +11,6 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
-import java.nio.charset.Charset;
-
 import nom.bisoncao.bcviewfinder.R;
 import nom.bisoncao.bcviewfinder.utils.ViewFinder;
 import nom.bisoncao.bcviewfinder.utils.ViewFinderBind;
