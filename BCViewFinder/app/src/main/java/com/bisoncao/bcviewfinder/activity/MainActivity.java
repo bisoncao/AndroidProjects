@@ -1,4 +1,4 @@
-package nom.bisoncao.bcviewfinder.activity;
+package com.bisoncao.bcviewfinder.activity;
 
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
@@ -11,10 +11,16 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
-import nom.bisoncao.bcviewfinder.R;
-import nom.bisoncao.bcviewfinder.utils.ViewFinder;
-import nom.bisoncao.bcviewfinder.utils.ViewFinderBind;
+import com.bisoncao.bcviewfinder.R;
+import com.bisoncao.bcviewfinder.utils.ViewFinder;
+import com.bisoncao.bcviewfinder.utils.ViewFinderBind;
 
+/**
+ * Demo activity for usage of {@link ViewFinder}
+ *
+ * @author Bison Cao
+ * @created 1:54 02/26/2016
+ */
 public class MainActivity extends AppCompatActivity {
 
     @ViewFinderBind(R.id.tv_first)
