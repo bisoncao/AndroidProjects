@@ -1,30 +1,32 @@
-package nom.bisoncao.bcviewfinder.utils;
+package com.bisoncao.bcviewfinder.utils;
 
 import android.view.View;
 
 import java.lang.reflect.Field;
 
 /**
- * 省去使用 findViewById 方法需要转换类型的问题，弥补 ButterKnife 所有 Field 只能绑定一个 View 的问题
- * 注意：需要配合使用 {@link ViewFinderBind} 注解
+ * A plus for ButterKnife. Can bind member variables to different view by groups.
+ * Attention: should use with {@link ViewFinderBind} annotation
  *
  * @author Bison Cao
  * @created 15:26 01/26/2016
  */
 public class ViewFinder {
 
+    private static final String TAG = "ViewFinder";
+
     /**
-     * @param thisObject 使用的类的实例，例如一个activity
-     * @param category   注解中的分组
+     * @param thisObject an instance of a class, e.g. an activity
+     * @param group      group field in {@link ViewFinderBind} annotation
      */
-    public static void bind(Object thisObject, String category, View parent) {
+    public static void bind(Object thisObject, String group, View parent) {
         try {
             Class myClass = Class.forName(thisObject.getClass().getName());
             if (myClass != null) {
                 Field[] fields = myClass.getDeclaredFields();
-                if (NullUtil.isNotNullArr(fields)) {
+                if (BCNullUtil.isNotNullArr(fields)) {
                     for (Field field : fields) {
-                        bindView(thisObject, category, parent, field);
+                        bindView(thisObject, group, parent, field);
                     }
                 }
             }
@@ -37,11 +39,12 @@ public class ViewFinder {
     /**
      * For example: you can use "ViewFinder.bind(this, this.getWindow().getDecorView())"
      * in OnCreate method after setContentView()
+     *
      * @param thisObject
      * @param parent
      */
     public static void bind(Object thisObject, View parent) {
-        bind(thisObject, ViewFinderBind.DEFAULT_CATEGORY, parent);
+        bind(thisObject, ViewFinderBind.DEFAULT_GROUP, parent);
     }
 
     public static <T> T getView(View parent, Field field) {
@@ -60,13 +63,13 @@ public class ViewFinder {
 
     private static void bindView(Object thisObject, String category, View parent, Field field) {
         if (category == null) {
-            category = ViewFinderBind.DEFAULT_CATEGORY;
+            category = ViewFinderBind.DEFAULT_GROUP;
         }
         field.setAccessible(true);
         if (field.isAnnotationPresent(ViewFinderBind.class)) {
             ViewFinderBind bind = field.getAnnotation(ViewFinderBind.class);
-            if (category.equals(bind.category())) {
-                TataDebug.d("ViewFinderBind", field.getName());
+            if (category.equals(bind.group())) {
+                BCDebug.d(TAG, field.getName());
                 try {
                     field.set(thisObject, getView(parent, bind));
                 } catch (IllegalAccessException e) {

@@ -1,4 +1,4 @@
-package nom.bisoncao.bcviewfinder.utils;
+package com.bisoncao.bcviewfinder.utils;
 
 import java.lang.annotation.Retention;
 import java.lang.annotation.Target;
@@ -14,7 +14,7 @@ import static java.lang.annotation.RetentionPolicy.RUNTIME;
 @Target(FIELD)
 public @interface ViewFinderBind {
 
-    String DEFAULT_CATEGORY = "";
+    String DEFAULT_GROUP = "";
 
     /**
      * View ID to which the field will be bound.
@@ -22,8 +22,9 @@ public @interface ViewFinderBind {
     int value() default 0;
 
     /**
-     * group indentifier, so you can bind different view using different group
+     * group identifier, so you can bind different view using different group
+     *
      * @return
      */
-    String category() default DEFAULT_CATEGORY;
+    String group() default DEFAULT_GROUP;
 }

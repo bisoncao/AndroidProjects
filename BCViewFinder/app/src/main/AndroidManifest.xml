@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<manifest package="nom.bisoncao.bcviewfinder"
+<manifest package="com.bisoncao.bcviewfinder"
           xmlns:android="http://schemas.android.com/apk/res/android">
 
     <application
