@@ -1,4 +1,4 @@
-package com.bisoncao.bcviewfinder.activity;
+package com.bisoncao.bcviewfinder.demo;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -13,8 +13,8 @@ import android.widget.Button;
 import android.widget.TextView;
 
 import com.bisoncao.bcviewfinder.R;
-import com.bisoncao.bcviewfinder.utils.ViewFinder;
-import com.bisoncao.bcviewfinder.utils.ViewFinderBind;
+import com.bisoncao.bcviewfinder.ViewFinder;
+import com.bisoncao.bcviewfinder.ViewFinderBind;
 
 /**
  * Demo activity for usage of {@link ViewFinder}
@@ -47,7 +47,7 @@ public class DemoActivity extends AppCompatActivity {
 
         /**
          * ****** ATTENTION ******
-         * Using like this (the "this" below means DemoActivity.this)
+         * Using like this (the "this" below means com.bisoncao.bcviewfinder.demo.DemoActivity.this)
          */
         ViewFinder.bind(this, this.getWindow().getDecorView());
 
