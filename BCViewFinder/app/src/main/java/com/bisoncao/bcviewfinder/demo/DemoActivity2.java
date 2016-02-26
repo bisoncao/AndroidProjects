@@ -1,4 +1,4 @@
-package com.bisoncao.bcviewfinder.activity;
+package com.bisoncao.bcviewfinder.demo;
 
 import android.graphics.Color;
 import android.os.Bundle;
@@ -14,8 +14,8 @@ import android.widget.ListView;
 import android.widget.TextView;
 
 import com.bisoncao.bcviewfinder.R;
-import com.bisoncao.bcviewfinder.utils.ViewFinder;
-import com.bisoncao.bcviewfinder.utils.ViewFinderBind;
+import com.bisoncao.bcviewfinder.ViewFinder;
+import com.bisoncao.bcviewfinder.ViewFinderBind;
 
 /**
  * Demo activity for using ViewFinder with group field

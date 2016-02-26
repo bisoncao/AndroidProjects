@@ -1,4 +1,4 @@
-package com.bisoncao.bcviewfinder.utils;
+package com.bisoncao.bcviewfinder;
 
 /**
  * Useful constants for reusing
