@@ -16,6 +16,8 @@ public class ViewFinder {
     private static final String TAG = "ViewFinder";
 
     /**
+     * bind all member variable annotated with ViewFinderBind with specified group field
+     *
      * @param thisObject an instance of a class, e.g. an activity
      * @param group      group field in {@link ViewFinderBind} annotation
      */
@@ -37,6 +39,7 @@ public class ViewFinder {
     }
 
     /**
+     * bind all member variable annotated with ViewFinderBind without group field
      * For example: you can use "ViewFinder.bind(this, this.getWindow().getDecorView())"
      * in OnCreate method after setContentView()
      *

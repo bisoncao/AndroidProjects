@@ -1,5 +1,6 @@
 package com.bisoncao.bcviewfinder.activity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -21,7 +22,7 @@ import com.bisoncao.bcviewfinder.utils.ViewFinderBind;
  * @author Bison Cao
  * @created 1:54 02/26/2016
  */
-public class MainActivity extends AppCompatActivity {
+public class DemoActivity extends AppCompatActivity {
 
     @ViewFinderBind(R.id.tv_first)
     private TextView tvFirst;
@@ -31,16 +32,25 @@ public class MainActivity extends AppCompatActivity {
     private TextView tvThird;
     @ViewFinderBind(R.id.btn_swap)
     private Button btnSwap;
+    @ViewFinderBind(R.id.toolbar)
+    private Toolbar toolbar;
     @ViewFinderBind(R.id.fab)
     private FloatingActionButton fab;
+    @ViewFinderBind(R.id.btn_goto_demo_2)
+    private Button btnGotoDemo2;
     private CharSequence[] texts = new CharSequence[3];
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_demo);
+
+        /**
+         * ****** ATTENTION ******
+         * Using like this (the "this" below means DemoActivity.this)
+         */
         ViewFinder.bind(this, this.getWindow().getDecorView());
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+
         setSupportActionBar(toolbar);
 
         texts[0] = tvFirst.getText();
@@ -65,6 +75,13 @@ public class MainActivity extends AppCompatActivity {
                 tvFirst.setText(texts[0]);
                 tvSecond.setText(texts[1]);
                 tvThird.setText(texts[2]);
+            }
+        });
+
+        btnGotoDemo2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(DemoActivity.this, DemoActivity2.class));
             }
         });
 
