@@ -1,12 +1,12 @@
-package com.bisoncao.bcviewfinder;
+package com.bisoncao.bccommonutil;
 
 import java.util.List;
 
 /**
  * Debug class for log output
  *
+ * @created 1:55 AM 02/26/2016
  * @author Bison Cao
- * @created 1:55 02/26/2016
  */
 public class BCDebug extends BCDebugParent {
 

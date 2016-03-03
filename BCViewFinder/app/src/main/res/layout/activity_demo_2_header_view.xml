@@ -50,9 +50,4 @@
         style="@style/list_view_item"
         android:text="item 9" />
 
-    <TextView
-        android:id="@+id/tv_10"
-        style="@style/list_view_item"
-        android:text="item 10" />
-
 </LinearLayout>

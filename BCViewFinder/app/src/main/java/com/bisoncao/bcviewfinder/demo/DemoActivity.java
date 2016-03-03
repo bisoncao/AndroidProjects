@@ -2,8 +2,6 @@ package com.bisoncao.bcviewfinder.demo;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
@@ -19,8 +17,8 @@ import com.bisoncao.bcviewfinder.ViewFinderBind;
 /**
  * Demo activity for usage of {@link ViewFinder}
  *
+ * @created 1:54 AM 02/26/2016
  * @author Bison Cao
- * @created 1:54 02/26/2016
  */
 public class DemoActivity extends AppCompatActivity {
 
@@ -34,8 +32,6 @@ public class DemoActivity extends AppCompatActivity {
     private Button btnSwap;
     @ViewFinderBind(R.id.toolbar)
     private Toolbar toolbar;
-    @ViewFinderBind(R.id.fab)
-    private FloatingActionButton fab;
     @ViewFinderBind(R.id.btn_goto_demo_2)
     private Button btnGotoDemo2;
     private CharSequence[] texts = new CharSequence[3];
@@ -56,13 +52,6 @@ public class DemoActivity extends AppCompatActivity {
         texts[0] = tvFirst.getText();
         texts[1] = tvSecond.getText();
         texts[2] = tvThird.getText();
-
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG).setAction("Action", null).show();
-            }
-        });
 
         btnSwap.setOnClickListener(new View.OnClickListener() {
             @Override

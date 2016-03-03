@@ -1,11 +1,11 @@
-package com.bisoncao.bcviewfinder;
+package com.bisoncao.bccommonutil;
 
 import java.util.List;
 import java.util.Map;
 
 /**
+ * @created 6:14 PM 12/05/2015
  * @author Bison Cao
- * @created 18:14 12/05/2015
  */
 public class BCNullUtil {
     /**
