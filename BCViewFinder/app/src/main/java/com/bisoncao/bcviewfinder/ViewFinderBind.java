@@ -7,8 +7,8 @@ import static java.lang.annotation.ElementType.FIELD;
 import static java.lang.annotation.RetentionPolicy.RUNTIME;
 
 /**
+ * @created 3:57 PM 01/26/2016
  * @author Bison Cao
- * @created 15:57 01/26/2016
  */
 @Retention(RUNTIME)
 @Target(FIELD)

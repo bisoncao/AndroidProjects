@@ -2,14 +2,17 @@ package com.bisoncao.bcviewfinder;
 
 import android.view.View;
 
+import com.bisoncao.bccommonutil.BCDebug;
+import com.bisoncao.bccommonutil.BCNullUtil;
+
 import java.lang.reflect.Field;
 
 /**
  * A plus for ButterKnife. Can bind member variables to different view by groups.
  * Attention: should use with {@link ViewFinderBind} annotation
  *
+ * @created 3:26 PM 01/26/2016
  * @author Bison Cao
- * @created 15:26 01/26/2016
  */
 public class ViewFinder {
 
@@ -20,6 +23,7 @@ public class ViewFinder {
      *
      * @param thisObject an instance of a class, e.g. an activity
      * @param group      group field in {@link ViewFinderBind} annotation
+     * @param parent     parent view of views which are bound with member variables
      */
     public static void bind(Object thisObject, String group, View parent) {
         try {
@@ -43,8 +47,8 @@ public class ViewFinder {
      * For example: you can use "ViewFinder.bind(this, this.getWindow().getDecorView())"
      * in OnCreate method after setContentView()
      *
-     * @param thisObject
-     * @param parent
+     * @param thisObject an instance of a class, e.g. an activity
+     * @param parent     parent view of views which are bound with member variables
      */
     public static void bind(Object thisObject, View parent) {
         bind(thisObject, ViewFinderBind.DEFAULT_GROUP, parent);

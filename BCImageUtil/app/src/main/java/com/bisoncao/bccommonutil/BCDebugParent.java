@@ -1,4 +1,4 @@
-package com.bisoncao.bcviewfinder;
+package com.bisoncao.bccommonutil;
 
 import android.util.Log;
 
@@ -7,8 +7,8 @@ import java.util.List;
 /**
  * Parent class of debug class for log output
  *
+ * @created 1:55 AM 02/26/2016
  * @author Bison Cao
- * @created 1:55 02/26/2016
  */
 public class BCDebugParent {
     public static final String BISON = "bison";
