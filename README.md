@@ -1,3 +1,3 @@
 # BCAndroidUtils
 
-Android utils for reusing code which is written by myself.
+Android utilities for reusing code which is written by myself.
