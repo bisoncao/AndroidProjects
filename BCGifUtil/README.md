@@ -1,3 +1,3 @@
 # BCGifUtil
 
-BCGifUtil is a util for using gif in Android.
+BCGifUtil is a utility for using gif in Android.

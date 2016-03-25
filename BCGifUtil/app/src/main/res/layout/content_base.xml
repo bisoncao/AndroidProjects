@@ -25,41 +25,18 @@
                 android:id="@+id/btn_display_dialog_1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="显示200*200" />
+                android:text="显示demo1" />
 
-            <Button
-                android:id="@+id/btn_display_dialog_2"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="显示300*300" />
-
-            <Button
-                android:id="@+id/btn_display_dialog_3"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="显示400*400" />
 
         </TableRow>
 
         <TableRow>
 
             <Button
-                android:id="@+id/btn_display_dialog_4"
+                android:id="@+id/btn_display_dialog_2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="显示500*500" />
-
-            <Button
-                android:id="@+id/btn_display_dialog_5"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="显示600*600" />
-
-            <Button
-                android:id="@+id/btn_display_dialog_6"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="显示700*700" />
+                android:text="显示demo2" />
 
         </TableRow>
 
