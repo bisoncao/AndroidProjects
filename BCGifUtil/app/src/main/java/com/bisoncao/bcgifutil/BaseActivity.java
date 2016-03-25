@@ -20,10 +20,8 @@ import com.bisoncao.bccommonutil.BCNullUtil;
 public class BaseActivity extends AppCompatActivity implements View.OnClickListener {
 
     private static int GIF_RES_ID;
-    private static final int[] GIF_IDS = {R.raw.le_loading_200, R.raw.le_loading_300, R.raw.le_loading_400, R.raw
-            .le_loading_500, R.raw.le_loading_600, R.raw.le_loading};
-    private static final int[] BTN_IDS = {R.id.btn_display_dialog_1, R.id.btn_display_dialog_2, R.id
-            .btn_display_dialog_3, R.id.btn_display_dialog_4, R.id.btn_display_dialog_5, R.id.btn_display_dialog_6};
+    private static final int[] GIF_IDS = {R.raw.gdemo_cool, R.raw.gdemo_penguin};
+    private static final int[] BTN_IDS = {R.id.btn_display_dialog_1, R.id.btn_display_dialog_2};
 
     protected Context mContext = this;
     private static final String TAG = "BaseActivity";
