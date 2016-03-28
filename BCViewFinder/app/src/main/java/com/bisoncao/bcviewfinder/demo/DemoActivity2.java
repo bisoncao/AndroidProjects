@@ -23,26 +23,26 @@ import com.bisoncao.bcviewfinder.ViewFinderBind;
  */
 public class DemoActivity2 extends AppCompatActivity {
 
-    private static final String GROUP_LABEL_HEADER_VIEW = "header_view";
+    private static final String GLABEL_HEADER_VIEW = "header_view";
 
     private TextView[] tvs;
-    @ViewFinderBind(value = R.id.tv_1, group = GROUP_LABEL_HEADER_VIEW)
+    @ViewFinderBind(value = R.id.tv_1, group = GLABEL_HEADER_VIEW)
     private TextView tv1;
-    @ViewFinderBind(value = R.id.tv_2, group = GROUP_LABEL_HEADER_VIEW)
+    @ViewFinderBind(value = R.id.tv_2, group = GLABEL_HEADER_VIEW)
     private TextView tv2;
-    @ViewFinderBind(value = R.id.tv_3, group = GROUP_LABEL_HEADER_VIEW)
+    @ViewFinderBind(value = R.id.tv_3, group = GLABEL_HEADER_VIEW)
     private TextView tv3;
-    @ViewFinderBind(value = R.id.tv_4, group = GROUP_LABEL_HEADER_VIEW)
+    @ViewFinderBind(value = R.id.tv_4, group = GLABEL_HEADER_VIEW)
     private TextView tv4;
-    @ViewFinderBind(value = R.id.tv_5, group = GROUP_LABEL_HEADER_VIEW)
+    @ViewFinderBind(value = R.id.tv_5, group = GLABEL_HEADER_VIEW)
     private TextView tv5;
-    @ViewFinderBind(value = R.id.tv_6, group = GROUP_LABEL_HEADER_VIEW)
+    @ViewFinderBind(value = R.id.tv_6, group = GLABEL_HEADER_VIEW)
     private TextView tv6;
-    @ViewFinderBind(value = R.id.tv_7, group = GROUP_LABEL_HEADER_VIEW)
+    @ViewFinderBind(value = R.id.tv_7, group = GLABEL_HEADER_VIEW)
     private TextView tv7;
-    @ViewFinderBind(value = R.id.tv_8, group = GROUP_LABEL_HEADER_VIEW)
+    @ViewFinderBind(value = R.id.tv_8, group = GLABEL_HEADER_VIEW)
     private TextView tv8;
-    @ViewFinderBind(value = R.id.tv_9, group = GROUP_LABEL_HEADER_VIEW)
+    @ViewFinderBind(value = R.id.tv_9, group = GLABEL_HEADER_VIEW)
     private TextView tv9;
 
     @ViewFinderBind(R.id.tv_selected_indicator)
@@ -66,7 +66,7 @@ public class DemoActivity2 extends AppCompatActivity {
          * ****** ATTENTION ******
          * bind the member variables annotated with ViewFinderBind without group field
          */
-        ViewFinder.bind(this, this.getWindow().getDecorView());
+        ViewFinder.bind(DemoActivity2.this);
 
         View headerView = getLayoutInflater().inflate(R.layout.activity_demo_2_header_view, null);
 
@@ -74,7 +74,7 @@ public class DemoActivity2 extends AppCompatActivity {
          * ****** ATTENTION ******
          * bind the member variables annotated with ViewFinderBind with group field
          */
-        ViewFinder.bind(this, GROUP_LABEL_HEADER_VIEW, headerView);
+        ViewFinder.bind(DemoActivity2.this, GLABEL_HEADER_VIEW, headerView);
 
         tvs = new TextView[]{tv1, tv2, tv3, tv4, tv5, tv6, tv7, tv8, tv9};
 

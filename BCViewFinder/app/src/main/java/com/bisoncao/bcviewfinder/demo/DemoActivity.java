@@ -45,7 +45,7 @@ public class DemoActivity extends AppCompatActivity {
          * ****** ATTENTION ******
          * Using like this (the "this" below means com.bisoncao.bcviewfinder.demo.DemoActivity.this)
          */
-        ViewFinder.bind(this, this.getWindow().getDecorView());
+        ViewFinder.bind(DemoActivity.this);
 
         setSupportActionBar(toolbar);
 

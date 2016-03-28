@@ -1,5 +1,6 @@
 package com.bisoncao.bcviewfinder;
 
+import android.app.Activity;
 import android.view.View;
 
 import com.bisoncao.bccommonutil.BCDebug;
@@ -11,8 +12,8 @@ import java.lang.reflect.Field;
  * A plus for ButterKnife. Can bind member variables to different view by groups.
  * Attention: should use with {@link ViewFinderBind} annotation
  *
- * @created 3:26 PM 01/26/2016
  * @author Bison Cao
+ * @created 3:26 PM 01/26/2016
  */
 public class ViewFinder {
 
@@ -29,6 +30,7 @@ public class ViewFinder {
         try {
             Class myClass = Class.forName(thisObject.getClass().getName());
             if (myClass != null) {
+                // using getDeclaredFields() instead of using getFields() for accessing non-public fields
                 Field[] fields = myClass.getDeclaredFields();
                 if (BCNullUtil.isNotNullArr(fields)) {
                     for (Field field : fields) {
@@ -54,12 +56,19 @@ public class ViewFinder {
         bind(thisObject, ViewFinderBind.DEFAULT_GROUP, parent);
     }
 
+    /**
+     * A convenient way of using {@link ViewFinder#bind(Object, View)} when it is
+     * an activity
+     */
+    public static void bind(Activity activity) {
+        bind(activity, ViewFinderBind.DEFAULT_GROUP, activity.getWindow().getDecorView());
+    }
+
     public static <T> T getView(View parent, Field field) {
         if (field.isAnnotationPresent(ViewFinderBind.class)) {
             return getView(parent, field.getAnnotation(ViewFinderBind.class));
         } else {
-            throw new NullPointerException("Must defind ViewFinderBind annotation when using ViewFinder and field should not be" +
-                    " private: " + field.getName());
+            throw new NullPointerException("Must define ViewFinderBind annotation: field - " + field.getName());
         }
 
     }
@@ -72,7 +81,7 @@ public class ViewFinder {
         if (category == null) {
             category = ViewFinderBind.DEFAULT_GROUP;
         }
-        field.setAccessible(true);
+        field.setAccessible(true); // makes non-public field accessible
         if (field.isAnnotationPresent(ViewFinderBind.class)) {
             ViewFinderBind bind = field.getAnnotation(ViewFinderBind.class);
             if (category.equals(bind.group())) {
