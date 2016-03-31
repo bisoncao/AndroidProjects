@@ -24,4 +24,9 @@
         <item name="android:textColor">@android:color/black</item>
     </style>
 
+    <style name="AppTheme.BisonCao" parent="AppTheme.NoActionBar">
+        <item name="android:windowBackground">@drawable/created_by_bison_cao</item>
+        <item name="android:windowFullscreen">true</item>
+    </style>
+
 </resources>
