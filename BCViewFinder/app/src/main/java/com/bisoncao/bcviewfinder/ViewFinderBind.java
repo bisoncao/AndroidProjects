@@ -22,7 +22,7 @@ public @interface ViewFinderBind {
     int value() default 0;
 
     /**
-     * group identifier, so you can bind different view using different group
+     * Group identifier (you can bind different views with different groups)
      *
      * @return
      */
