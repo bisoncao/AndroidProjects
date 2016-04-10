@@ -11,6 +11,7 @@ import com.bisoncao.bccommonutil.demo.MainActivity;
 public class BCBootActivity extends AppCompatActivity {
 
     private static final String TAG = "BCBootActivity";
+    private static final int DURATION = 2000;
     // indicates whether it is exit by user before finish
     private boolean earlyExit = false;
 
@@ -29,7 +30,7 @@ public class BCBootActivity extends AppCompatActivity {
                     Log.d(TAG, "early exit by user!");
                 }
             }
-        }, 1500);
+        }, DURATION);
     }
 
     @Override
