@@ -64,7 +64,7 @@ public class DemoActivity2 extends AppCompatActivity {
 
         /**
          * ****** ATTENTION ******
-         * bind the member variables annotated with ViewFinderBind without group field
+         * Bind the member variables annotated with ViewFinderBind without group field.
          */
         ViewFinder.bind(DemoActivity2.this);
 
@@ -72,7 +72,7 @@ public class DemoActivity2 extends AppCompatActivity {
 
         /**
          * ****** ATTENTION ******
-         * bind the member variables annotated with ViewFinderBind with group field
+         * Bind the member variables annotated with ViewFinderBind with group field.
          */
         ViewFinder.bind(DemoActivity2.this, GLABEL_HEADER_VIEW, headerView);
 

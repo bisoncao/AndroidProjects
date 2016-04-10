@@ -43,7 +43,7 @@ public class DemoActivity extends AppCompatActivity {
 
         /**
          * ****** ATTENTION ******
-         * Using like this (the "this" below means com.bisoncao.bcviewfinder.demo.DemoActivity.this)
+         * Using like this.
          */
         ViewFinder.bind(DemoActivity.this);
 

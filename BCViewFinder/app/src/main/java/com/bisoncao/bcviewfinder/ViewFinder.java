@@ -9,8 +9,8 @@ import com.bisoncao.bccommonutil.BCNullUtil;
 import java.lang.reflect.Field;
 
 /**
- * A plus for ButterKnife. Can bind member variables to different view by groups.
- * Attention: should use with {@link ViewFinderBind} annotation
+ * An improvement for ButterKnife. It can bind member variables to different views by {@link ViewFinderBind#group()}.
+ * Attention: should be used along with {@link ViewFinderBind} annotation
  *
  * @author Bison Cao
  * @created 3:26 PM 01/26/2016
@@ -20,17 +20,17 @@ public class ViewFinder {
     private static final String TAG = "ViewFinder";
 
     /**
-     * bind all member variable annotated with ViewFinderBind with specified group field
+     * Bind all member variables annotated with {@link ViewFinderBind} with specified group field.
      *
-     * @param thisObject an instance of a class, e.g. an activity
-     * @param group      group field in {@link ViewFinderBind} annotation
-     * @param parent     parent view of views which are bound with member variables
+     * @param thisObject An instance of a class, e.g. an activity
+     * @param group      Group field in {@link ViewFinderBind} annotation
+     * @param parent     Parent view of views which are bound with member variables
      */
     public static void bind(Object thisObject, String group, View parent) {
         try {
             Class myClass = Class.forName(thisObject.getClass().getName());
             if (myClass != null) {
-                // using getDeclaredFields() instead of using getFields() for accessing non-public fields
+                // Using getDeclaredFields() instead of using getFields() for accessing non-public fields
                 Field[] fields = myClass.getDeclaredFields();
                 if (BCNullUtil.isNotNullArr(fields)) {
                     for (Field field : fields) {
@@ -45,12 +45,12 @@ public class ViewFinder {
     }
 
     /**
-     * bind all member variable annotated with ViewFinderBind without group field
+     * Bind all member variable annotated with ViewFinderBind without group field.
      * For example: you can use "ViewFinder.bind(this, this.getWindow().getDecorView())"
-     * in OnCreate method after setContentView()
+     * in OnCreate() after setContentView()
      *
-     * @param thisObject an instance of a class, e.g. an activity
-     * @param parent     parent view of views which are bound with member variables
+     * @param thisObject An instance of a class, e.g. an activity
+     * @param parent     Parent view of views which are bound with member variables
      */
     public static void bind(Object thisObject, View parent) {
         bind(thisObject, ViewFinderBind.DEFAULT_GROUP, parent);
@@ -58,7 +58,7 @@ public class ViewFinder {
 
     /**
      * A convenient way of using {@link ViewFinder#bind(Object, View)} when it is
-     * an activity
+     * an activity.
      */
     public static void bind(Activity activity) {
         bind(activity, ViewFinderBind.DEFAULT_GROUP, activity.getWindow().getDecorView());
