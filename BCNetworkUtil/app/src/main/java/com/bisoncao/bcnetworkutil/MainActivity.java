@@ -187,6 +187,7 @@ public class MainActivity extends AppCompatActivity {
     private void showToast(String msg) {
         if (singleToast == null) {
             singleToast = Toast.makeText(mContext, msg, Toast.LENGTH_SHORT);
+            singleToast.show();
         } else {
             singleToast.setText(msg);
             singleToast.show();
