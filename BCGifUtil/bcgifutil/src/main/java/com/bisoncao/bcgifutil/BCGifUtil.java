@@ -6,6 +6,7 @@ import android.view.View;
 import android.widget.TextView;
 
 import com.bisoncao.bccommonutil.BCDebug;
+import com.bisoncao.bccommonutil.DeviceUtils;
 
 import java.util.HashMap;
 

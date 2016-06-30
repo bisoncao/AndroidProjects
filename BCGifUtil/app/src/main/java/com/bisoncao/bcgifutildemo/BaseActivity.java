@@ -1,12 +1,15 @@
-package com.bisoncao.bcgifutil;
+package com.bisoncao.bcgifutildemo;
 
+import android.annotation.TargetApi;
 import android.app.Dialog;
 import android.content.Context;
+import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -16,6 +19,9 @@ import android.widget.TextView;
 
 import com.bisoncao.bccommonutil.BCDebug;
 import com.bisoncao.bccommonutil.BCNullUtil;
+import com.bisoncao.bcgifutil.BCGifPlayCallback;
+import com.bisoncao.bcgifutil.BCGifUtil;
+import com.bisoncao.bcgifutil.GifAnimationDrawable;
 
 public class BaseActivity extends AppCompatActivity implements View.OnClickListener {
 
@@ -132,6 +138,9 @@ public class BaseActivity extends AppCompatActivity implements View.OnClickListe
             BCGifUtil.playGif(mContext, handler, gifCarrier, GIF_RES_ID, new BCGifPlayCallback() {
                 @Override
                 public void onPlayedSuc(GifAnimationDrawable gif) {
+                    if (isExited()) {
+                        return;
+                    }
                     progressDialog.show();
                     gifAnimationDrawable = gif;
                     BCDebug.d(TAG, "onPlayedSuc");
@@ -179,5 +188,24 @@ public class BaseActivity extends AppCompatActivity implements View.OnClickListe
             GIF_RES_ID = GIF_IDS[find];
             recursiveDo();
         }
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        this.isDestoryed = true;
+        Log.d(TAG, "onDestroy");
+    }
+
+    private boolean isDestoryed;
+
+    @TargetApi(Build.VERSION_CODES.JELLY_BEAN_MR1)
+    public boolean isDestroyedVersionSafe() {
+        return android.os.Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN_MR1 ? this
+                .isDestroyed() : this.isDestoryed;
+    }
+
+    public boolean isExited() {
+        return this.isFinishing() || isDestroyedVersionSafe();
     }
 }

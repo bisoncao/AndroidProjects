@@ -1,4 +1,4 @@
-package com.bisoncao.bcnetworkutil;
+package com.bisoncao.bcnetworkutildemo;
 
 import android.content.ClipData;
 import android.content.ClipboardManager;
@@ -17,7 +17,9 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
-import android.widget.Toast;
+
+import com.bisoncao.bccommonutil.BCSingleToastUtil;
+import com.bisoncao.bcnetworkutil.NetworkUtil;
 
 import java.io.File;
 import java.io.FileOutputStream;
@@ -47,6 +49,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         mNetworkUtil = new NetworkUtil();
+        singleToast = new BCSingleToastUtil(mContext);
 
         btnDetect = (Button) findViewById(R.id.btn_detect);
         btnAutoDetect = (Button) findViewById(R.id.btn_auto_detect);
@@ -185,16 +188,10 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void showToast(String msg) {
-        if (singleToast == null) {
-            singleToast = Toast.makeText(mContext, msg, Toast.LENGTH_SHORT);
-            singleToast.show();
-        } else {
-            singleToast.setText(msg);
-            singleToast.show();
-        }
+        singleToast.showShortToast(msg);
     }
 
-    private Toast singleToast;
+    private BCSingleToastUtil singleToast;
 
     private void addHistory(String msg) {
         boolean isVisible = etHistory.getVisibility() == View.VISIBLE;

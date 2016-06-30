@@ -13,6 +13,11 @@
             android:name=".DemoActivity"
             android:label="@string/app_name"
             android:theme="@style/AppTheme.NoActionBar">
+            <!-- Move this to define launch activity -->
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
         </activity>
 
         <activity
@@ -24,10 +29,6 @@
             android:name=".BCBootActivity"
             android:label="@string/app_name"
             android:theme="@style/AppTheme.BisonCao">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN"/>
-                <category android:name="android.intent.category.LAUNCHER"/>
-            </intent-filter>
         </activity>
     </application>
 
