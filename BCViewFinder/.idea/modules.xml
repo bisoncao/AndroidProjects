@@ -4,6 +4,7 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/BCViewFinder.iml" filepath="$PROJECT_DIR$/BCViewFinder.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/bcviewfinder/bcviewfinder.iml" filepath="$PROJECT_DIR$/bcviewfinder/bcviewfinder.iml" />
     </modules>
   </component>
 </project>
